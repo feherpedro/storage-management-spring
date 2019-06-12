@@ -2,23 +2,23 @@
   "storageManagementSpringApp": {
     "productCategory": {
       "home": {
-        "title": "ProductCategories",
-        "createLabel": "Egy új Product Category létrehozása",
-        "createOrEditLabel": "Hozzon létre, vagy módosítson Product Categoryt",
-        "search": "Product Category keresése",
-        "notFound": "No Product Category found"
+        "title": "Termékkategórák",
+        "createLabel": "Egy új Termékkategória létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Termékkategóriát",
+        "search": "Termékkategória keresése",
+        "notFound": "Nem található Termékkategória"
       },
-      "created": "Egy új Product Category lett létrehozva {{ param }} azonosítóval",
-      "updated": "A Product Category módosítva lett {{ param }} azonosítóval",
-      "deleted": "A Product Category törölve lett {{ param }} azonosítóval",
+      "created": "Egy új Termékkategória lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Termékkategória módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Termékkategória törölve lett {{ param }} azonosítóval",
       "delete": {
-        "question": "Biztos benne, hogy törölni szeretné az Product Categoryt {{ id }} azonosítóval?"
+        "question": "Biztos benne, hogy törölni szeretné az Termékkategóriát {{ id }} azonosítóval?"
       },
       "detail": {
-        "title": "Product Category"
+        "title": "Termékkategória"
       },
-      "name": "Name",
-      "description": "Description"
+      "name": "Név",
+      "description": "Leírás"
     }
   }
 }

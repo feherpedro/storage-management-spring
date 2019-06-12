@@ -20,7 +20,7 @@
                 <dt><span jhiTranslate="storageManagementSpringApp.orderEntity.status">Status</span></dt>
                 <dd>
                     <div *ngIf="orderEntity.statusId">
-                        <a [routerLink]="['/status', orderEntity.statusId, 'view']">{{orderEntity.statusId}}</a>
+                        <a [routerLink]="['/status', orderEntity.statusId, 'view']">{{orderEntity.statusName}}</a>
                     </div>
                 </dd>
             </dl>
@@ -31,11 +31,22 @@
                 <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
             </button>
 
-            <button type="button"
+            <button *ngIf="!isFinalized()" type="button"
                     [routerLink]="['/order-entity', orderEntity.id, 'edit']"
                     class="btn btn-primary">
                 <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
             </button>
+
+            <button *ngIf="!isFinalized()" type="submit"
+                    [disabled]="!hasItems"
+                    (click)="onRaktarClick(orderEntity)"
+                    class="btn btn-success">
+                <span class="fa fa-check"></span>
+                <span class="d-none d-md-inline">Raktárba</span>
+            </button>
         </div>
+
+<!--        <jhi-order-item class="mt-3" [orderEntity]="orderEntity" (hasItems)="hasItemsEmit($event)"></jhi-order-item>-->
+
     </div>
 </div>

@@ -2,25 +2,25 @@
   "storageManagementSpringApp": {
     "orderItem": {
       "home": {
-        "title": "OrderItems",
-        "createLabel": "Egy új Order Item létrehozása",
-        "createOrEditLabel": "Hozzon létre, vagy módosítson Order Itemt",
-        "search": "Order Item keresése",
-        "notFound": "No Order Item found"
+        "title": "Rendelési tétel",
+        "createLabel": "Egy új Rendelési tétel létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Rendelési tételt",
+        "search": "Rendelési tétel keresése",
+        "notFound": "Nem található Rendelési tétel found"
       },
-      "created": "Egy új Order Item lett létrehozva {{ param }} azonosítóval",
-      "updated": "A Order Item módosítva lett {{ param }} azonosítóval",
-      "deleted": "A Order Item törölve lett {{ param }} azonosítóval",
+      "created": "Egy új Rendelési tétel lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Rendelési tétel módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Rendelési tétel törölve lett {{ param }} azonosítóval",
       "delete": {
-        "question": "Biztos benne, hogy törölni szeretné az Order Itemt {{ id }} azonosítóval?"
+        "question": "Biztos benne, hogy törölni szeretné a Rendelési tételt {{ id }} azonosítóval?"
       },
       "detail": {
-        "title": "Order Item"
+        "title": "Rendelési tétel"
       },
-      "quantity": "Quantity",
-      "orderEntity": "Order Entity",
-      "product": "Product",
-      "status": "Status"
+      "quantity": "Mennyiség",
+      "orderEntity": "Rendelés",
+      "product": "Termék",
+      "status": "Státusz"
     }
   }
 }

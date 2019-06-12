@@ -12,7 +12,7 @@
     "messages": {
       "error": {
         "fail": "<strong>Hiba történt!</strong> A beállításokat nem sikerült elmenteni.",
-        "emailexists": "<strong>Az email cím már használva van!</strong> Kérjük, válasszon másikat."
+        "emailexists": "<strong>Az email cím már használva van!</strong> Válasszon másikat."
       },
       "success": "<strong>Beállítások elmentésre kerültek!</strong>",
       "validate": {

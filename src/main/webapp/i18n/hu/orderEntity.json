@@ -2,25 +2,27 @@
   "storageManagementSpringApp": {
     "orderEntity": {
       "home": {
-        "title": "OrderEntities",
-        "createLabel": "Egy új Order Entity létrehozása",
-        "createOrEditLabel": "Hozzon létre, vagy módosítson Order Entityt",
-        "search": "Order Entity keresése",
-        "notFound": "No Order Entity found"
+        "title": "Rendelések",
+        "createLabel": "Egy új Rendelés létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Rendelést",
+        "search": "Rendelés keresése",
+        "notFound": "Nem található Rendelés"
       },
-      "created": "Egy új Order Entity lett létrehozva {{ param }} azonosítóval",
-      "updated": "A Order Entity módosítva lett {{ param }} azonosítóval",
-      "deleted": "A Order Entity törölve lett {{ param }} azonosítóval",
+      "created": "Egy új Rendelés lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Rendelés módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Rendelés törölve lett {{ param }} azonosítóval",
       "delete": {
-        "question": "Biztos benne, hogy törölni szeretné az Order Entityt {{ id }} azonosítóval?"
+        "question": "Biztos benne, hogy törölni szeretné a Rendelést {{ id }} azonosítóval?"
       },
       "detail": {
-        "title": "Order Entity"
+        "title": "Rendelés"
       },
-      "createDate": "Create Date",
-      "paymentDate": "Payment Date",
-      "dueDate": "Due Date",
-      "status": "Status"
+      "createDate": "Létrehozás dátuma",
+      "paymentDate": "Fizetés dátuma",
+      "dueDate": "Teljesítés dátuma",
+      "status": "Státusz",
+      "raktarbaFelveve": "A bevételezés sikeresen felvéve a raktárba",
+      "orderItemListLength": "Bevételezendő termékek száma"
     }
   }
 }

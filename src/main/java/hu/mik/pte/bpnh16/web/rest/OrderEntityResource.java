@@ -1,33 +1,38 @@
 package hu.mik.pte.bpnh16.web.rest;
 
+import hu.mik.pte.bpnh16.config.Constants;
 import hu.mik.pte.bpnh16.service.OrderEntityService;
-import hu.mik.pte.bpnh16.web.rest.errors.BadRequestAlertException;
 import hu.mik.pte.bpnh16.service.dto.OrderEntityDTO;
-
+import hu.mik.pte.bpnh16.service.dto.OrderItemDTO;
+import hu.mik.pte.bpnh16.web.rest.errors.BadRequestAlertException;
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+import io.micrometer.core.annotation.Timed;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.net.URI;
-import java.net.URISyntaxException;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.StreamSupport;
-
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 /**
  * REST controller for managing {@link hu.mik.pte.bpnh16.domain.OrderEntity}.
@@ -62,6 +67,7 @@ public class OrderEntityResource {
         if (orderEntityDTO.getId() != null) {
             throw new BadRequestAlertException("A new orderEntity cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        orderEntityDTO.setStatusId(Constants.ORDER_STATUS_FELDOLGOZAS_ALATT);
         OrderEntityDTO result = orderEntityService.save(orderEntityDTO);
         return ResponseEntity.created(new URI("/api/order-entities/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
@@ -145,4 +151,28 @@ public class OrderEntityResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
+
+    /**
+     * Update product quantities from Orders
+     * @param id the orderEntity's id
+     * @param orderItemList list of Products to be updated
+     * @return the original OrderEntity with it's status updated to done
+     * @throws URISyntaxException if the Location URI syntax is incorrect
+     */
+    @PostMapping("/order-entities/{id}/placeIntoProducts")
+    @Timed
+    public ResponseEntity<OrderEntityDTO> placeIntoProducts( @PathVariable Long id, @RequestBody List<OrderItemDTO> orderItemList)
+        throws URISyntaxException {
+        log.debug("REST request to place these order items into Products : {}", orderItemList);
+        Optional<OrderEntityDTO> orderEntityDTO = orderEntityService.findOne(id);
+        if (orderEntityDTO.isPresent()) {
+            OrderEntityDTO orderEntityDTOPresent = orderEntityDTO.get();
+            orderEntityService.placeIntoProducts(orderItemList);
+            orderEntityDTOPresent.setStatusId(Constants.ORDER_STATUS_LEZARVA);
+            orderEntityDTOPresent.setDueDate(LocalDate.now());
+            return updateOrderEntity(orderEntityDTOPresent);
+        } else {
+            return null;
+        }
+    }
 }

@@ -47,7 +47,7 @@
                     <label class="form-control-label" jhiTranslate="storageManagementSpringApp.orderEntity.status" for="field_status">Status</label>
                     <select class="form-control" id="field_status" name="status" formControlName="statusId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="statusOption.id" *ngFor="let statusOption of statuses; trackBy: trackStatusById">{{statusOption.id}}</option>
+                        <option [ngValue]="statusOption.id" *ngFor="let statusOption of statuses; trackBy: trackStatusById">{{statusOption.name}}</option>
                     </select>
                 </div>
             </div>

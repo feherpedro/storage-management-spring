@@ -4,8 +4,12 @@ import hu.mik.pte.bpnh16.service.OrderEntityService;
 import hu.mik.pte.bpnh16.domain.OrderEntity;
 import hu.mik.pte.bpnh16.repository.OrderEntityRepository;
 import hu.mik.pte.bpnh16.repository.search.OrderEntitySearchRepository;
+import hu.mik.pte.bpnh16.service.ProductService;
 import hu.mik.pte.bpnh16.service.dto.OrderEntityDTO;
+import hu.mik.pte.bpnh16.service.dto.OrderItemDTO;
+import hu.mik.pte.bpnh16.service.dto.ProductDTO;
 import hu.mik.pte.bpnh16.service.mapper.OrderEntityMapper;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,10 +37,16 @@ public class OrderEntityServiceImpl implements OrderEntityService {
 
     private final OrderEntitySearchRepository orderEntitySearchRepository;
 
-    public OrderEntityServiceImpl(OrderEntityRepository orderEntityRepository, OrderEntityMapper orderEntityMapper, OrderEntitySearchRepository orderEntitySearchRepository) {
+    private final ProductService productService;
+
+    public OrderEntityServiceImpl(OrderEntityRepository orderEntityRepository,
+        OrderEntityMapper orderEntityMapper,
+        OrderEntitySearchRepository orderEntitySearchRepository,
+        ProductService productService) {
         this.orderEntityRepository = orderEntityRepository;
         this.orderEntityMapper = orderEntityMapper;
         this.orderEntitySearchRepository = orderEntitySearchRepository;
+        this.productService = productService;
     }
 
     /**
@@ -109,5 +119,22 @@ public class OrderEntityServiceImpl implements OrderEntityService {
         log.debug("Request to search for a page of OrderEntities for query {}", query);
         return orderEntitySearchRepository.search(queryStringQuery(query), pageable)
             .map(orderEntityMapper::toDto);
+    }
+
+    /**
+     * Update product quantities from Orders
+     * @param orderItemList list of Products to be updated
+     */
+    @Override
+    public void placeIntoProducts(List<OrderItemDTO> orderItemList) {
+        log.debug("Request to to place these order items into Products : {}", orderItemList);
+        for (OrderItemDTO orderItem : orderItemList) {
+            Optional<ProductDTO> productDTO = productService.findOne(orderItem.getProductId());
+            if (productDTO.isPresent()) {
+                ProductDTO productDTOPresent = productDTO.get();
+                productDTOPresent.setQuantity(productDTOPresent.getQuantity() + orderItem.getQuantity());
+                productService.save(productDTOPresent);
+            }
+        }
     }
 }

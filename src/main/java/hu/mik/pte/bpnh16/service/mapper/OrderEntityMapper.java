@@ -8,10 +8,13 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity {@link OrderEntity} and its DTO {@link OrderEntityDTO}.
  */
-@Mapper(componentModel = "spring", uses = {StatusMapper.class})
+@Mapper(componentModel = "spring",
+    collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED,
+    uses = {StatusMapper.class, OrderItemMapper.class})
 public interface OrderEntityMapper extends EntityMapper<OrderEntityDTO, OrderEntity> {
 
     @Mapping(source = "status.id", target = "statusId")
+    @Mapping(source = "status.name", target = "statusName")
     OrderEntityDTO toDto(OrderEntity orderEntity);
 
     @Mapping(source = "statusId", target = "status")

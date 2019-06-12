@@ -2,6 +2,8 @@ package hu.mik.pte.bpnh16.service;
 
 import hu.mik.pte.bpnh16.service.dto.OrderEntityDTO;
 
+import hu.mik.pte.bpnh16.service.dto.OrderItemDTO;
+import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -53,4 +55,10 @@ public interface OrderEntityService {
      * @return the list of entities.
      */
     Page<OrderEntityDTO> search(String query, Pageable pageable);
+
+    /**
+     * Update product quantities from Orders
+     * @param orderItemList list of Products to be updated
+     */
+    public void placeIntoProducts(List<OrderItemDTO> orderItemList);
 }

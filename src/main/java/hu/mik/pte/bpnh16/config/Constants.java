@@ -12,6 +12,9 @@ public final class Constants {
     public static final String DEFAULT_LANGUAGE = "hu";
     public static final String ANONYMOUS_USER = "anonymoususer";
 
+    public static final Long ORDER_STATUS_FELDOLGOZAS_ALATT = 1351L;
+    public static final Long ORDER_STATUS_LEZARVA = 1352L;
+
     private Constants() {
     }
 }

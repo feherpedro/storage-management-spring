@@ -1,13 +1,19 @@
 package hu.mik.pte.bpnh16.domain;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import javax.persistence.*;
-import javax.validation.constraints.*;
-
 import org.springframework.data.elasticsearch.annotations.FieldType;
-import java.io.Serializable;
 
 /**
  * A Product.
@@ -26,7 +32,7 @@ public class Product implements Serializable {
     @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Keyword)
     private Long id;
 
-    @NotNull
+    @NotBlank
     @Column(name = "name", nullable = false)
     private String name;
 
@@ -39,8 +45,8 @@ public class Product implements Serializable {
     @Column(name = "unit_of_measurement")
     private String unitOfMeasurement;
 
-    @NotNull
-    @Column(name = "barcode", nullable = false)
+    @NotBlank
+    @Column(name = "barcode", nullable = false, unique = true)
     private String barcode;
 
     @ManyToOne

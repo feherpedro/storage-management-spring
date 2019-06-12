@@ -2,23 +2,23 @@
   "storageManagementSpringApp": {
     "priceCategory": {
       "home": {
-        "title": "PriceCategories",
-        "createLabel": "Egy új Price Category létrehozása",
-        "createOrEditLabel": "Hozzon létre, vagy módosítson Price Categoryt",
-        "search": "Price Category keresése",
-        "notFound": "No Price Category found"
+        "title": "Árkategóriák",
+        "createLabel": "Egy új Árkategória létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Árkategóriát",
+        "search": "Árkategória keresése",
+        "notFound": "Nem található Árkategória"
       },
-      "created": "Egy új Price Category lett létrehozva {{ param }} azonosítóval",
-      "updated": "A Price Category módosítva lett {{ param }} azonosítóval",
-      "deleted": "A Price Category törölve lett {{ param }} azonosítóval",
+      "created": "Egy új Árkategória lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Árkategória módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Árkategória törölve lett {{ param }} azonosítóval",
       "delete": {
-        "question": "Biztos benne, hogy törölni szeretné az Price Categoryt {{ id }} azonosítóval?"
+        "question": "Biztos benne, hogy törölni szeretné az Árkategóriát {{ id }} azonosítóval?"
       },
       "detail": {
-        "title": "Price Category"
+        "title": "Árkategória"
       },
-      "name": "Name",
-      "price": "Price"
+      "name": "Név",
+      "price": "Ár"
     }
   }
 }

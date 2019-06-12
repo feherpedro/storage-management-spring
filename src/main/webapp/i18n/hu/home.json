@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "Üdvözöljük, Java Hipster!",
-    "subtitle": "Ez a nyitóképernyőd",
+    "title": "Raktár nyilvántartó rendszer",
+    "subtitle": "Ez a nyitóképernyő",
     "logged": {
       "message": "Ön \"{{username}}\"-ként lépett be."
     },

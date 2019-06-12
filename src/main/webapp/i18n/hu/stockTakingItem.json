@@ -2,27 +2,27 @@
   "storageManagementSpringApp": {
     "stockTakingItem": {
       "home": {
-        "title": "StockTakingItems",
-        "createLabel": "Egy új Stock Taking Item létrehozása",
-        "createOrEditLabel": "Hozzon létre, vagy módosítson Stock Taking Itemt",
-        "search": "Stock Taking Item keresése",
-        "notFound": "No Stock Taking Item found"
+        "title": "Leltár tételek",
+        "createLabel": "Egy új Leltár tétel létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Leltár tételt",
+        "search": "Leltár tétel keresése",
+        "notFound": "Nem található Leltár tétel"
       },
-      "created": "Egy új Stock Taking Item lett létrehozva {{ param }} azonosítóval",
-      "updated": "A Stock Taking Item módosítva lett {{ param }} azonosítóval",
-      "deleted": "A Stock Taking Item törölve lett {{ param }} azonosítóval",
+      "created": "Egy új Leltár tétel lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Leltár tétel módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Leltár tétel törölve lett {{ param }} azonosítóval",
       "delete": {
-        "question": "Biztos benne, hogy törölni szeretné az Stock Taking Itemt {{ id }} azonosítóval?"
+        "question": "Biztos benne, hogy törölni szeretné az Leltár tételt {{ id }} azonosítóval?"
       },
       "detail": {
-        "title": "Stock Taking Item"
+        "title": "Leltár tétel"
       },
-      "oldQuantity": "Old Quantity",
-      "newQuantity": "New Quantity",
-      "difference": "Difference",
-      "stockTaking": "Stock Taking",
-      "product": "Product",
-      "status": "Status"
+      "oldQuantity": "Régi mennyiség",
+      "newQuantity": "Új mennyiség",
+      "difference": "Különbség",
+      "stockTaking": "Leltár",
+      "product": "Termék",
+      "status": "Státusz"
     }
   }
 }

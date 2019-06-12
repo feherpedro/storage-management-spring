@@ -13,12 +13,20 @@ public class OrderItemDTO implements Serializable {
     @NotNull
     private Long quantity;
 
-
     private Long orderEntityId;
 
+    @NotNull
     private Long productId;
 
+    private String productName;
+
+    private String productUnitOfMeasurement;
+
+    private String productBarcode;
+
     private Long statusId;
+
+    private String statusName;
 
     public Long getId() {
         return id;
@@ -58,6 +66,38 @@ public class OrderItemDTO implements Serializable {
 
     public void setStatusId(Long statusId) {
         this.statusId = statusId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public String getProductUnitOfMeasurement() {
+        return productUnitOfMeasurement;
+    }
+
+    public void setProductUnitOfMeasurement(String productUnitOfMeasurement) {
+        this.productUnitOfMeasurement = productUnitOfMeasurement;
+    }
+
+    public String getProductBarcode() {
+        return productBarcode;
+    }
+
+    public void setProductBarcode(String productBarcode) {
+        this.productBarcode = productBarcode;
+    }
+
+    public String getStatusName() {
+        return statusName;
+    }
+
+    public void setStatusName(String statusName) {
+        this.statusName = statusName;
     }
 
     @Override

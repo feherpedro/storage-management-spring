@@ -2,29 +2,29 @@
   "storageManagementSpringApp": {
     "product": {
       "home": {
-        "title": "Products",
-        "createLabel": "Egy új Product létrehozása",
-        "createOrEditLabel": "Hozzon létre, vagy módosítson Productt",
-        "search": "Product keresése",
-        "notFound": "No Product found"
+        "title": "Termékek",
+        "createLabel": "Egy új Termék létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Terméket",
+        "search": "Termék keresése",
+        "notFound": "Nem található Termék"
       },
-      "created": "Egy új Product lett létrehozva {{ param }} azonosítóval",
-      "updated": "A Product módosítva lett {{ param }} azonosítóval",
-      "deleted": "A Product törölve lett {{ param }} azonosítóval",
+      "created": "Egy új Termék lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Termék módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Termék törölve lett {{ param }} azonosítóval",
       "delete": {
-        "question": "Biztos benne, hogy törölni szeretné az Productt {{ id }} azonosítóval?"
+        "question": "Biztos benne, hogy törölni szeretné az Terméket {{ id }} azonosítóval?"
       },
       "detail": {
-        "title": "Product"
+        "title": "Termék"
       },
-      "name": "Name",
-      "price": "Price",
-      "quantity": "Quantity",
-      "unitOfMeasurement": "Unit Of Measurement",
-      "barcode": "Barcode",
-      "productCategory": "Product Category",
-      "priceCategory": "Price Category",
-      "status": "Status"
+      "name": "Név",
+      "price": "Ár",
+      "quantity": "Mennyiség",
+      "unitOfMeasurement": "Mértékegység",
+      "barcode": "Vonalkód",
+      "productCategory": "Termék kategória",
+      "priceCategory": "Ár kategória",
+      "status": "Státusz"
     }
   }
 }

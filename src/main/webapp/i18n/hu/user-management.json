@@ -5,9 +5,9 @@
       "createLabel": "Új felhasználó",
       "createOrEditLabel": "Felhasználó létrehozás vagy módosítás"
     },
-    "created": "A new user is created with identifier {{ param }}",
-    "updated": "A user is updated with identifier {{ param }}",
-    "deleted": "A user is deleted with identifier {{ param }}",
+    "created": "A {{ param }} nevű felhasználó sikeresen létrehozva",
+    "updated": "A {{ param }} nevű felhasználó sikeresen módosítva",
+    "deleted": "A {{ param }} nevű felhasználó sikeresen törölve",
     "delete": {
       "question": "Biztos benne, hogy törölni szeretné az {{ login }} azonosítóval rendelkező felhasználót?"
     },

@@ -1,5 +1,6 @@
 package hu.mik.pte.bpnh16.service.dto;
 import java.time.LocalDate;
+import java.util.List;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
@@ -18,8 +19,11 @@ public class OrderEntityDTO implements Serializable {
 
     private LocalDate dueDate;
 
-
     private Long statusId;
+
+    private String statusName;
+
+    private List<OrderItemDTO> orderItemList;
 
     public Long getId() {
         return id;
@@ -59,6 +63,22 @@ public class OrderEntityDTO implements Serializable {
 
     public void setStatusId(Long statusId) {
         this.statusId = statusId;
+    }
+
+    public String getStatusName() {
+        return statusName;
+    }
+
+    public void setStatusName(String statusName) {
+        this.statusName = statusName;
+    }
+
+    public List<OrderItemDTO> getOrderItemList() {
+        return orderItemList;
+    }
+
+    public void setOrderItemList(List<OrderItemDTO> orderItemList) {
+        this.orderItemList = orderItemList;
     }
 
     @Override

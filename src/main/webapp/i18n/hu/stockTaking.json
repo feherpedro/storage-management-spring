@@ -2,23 +2,23 @@
   "storageManagementSpringApp": {
     "stockTaking": {
       "home": {
-        "title": "StockTakings",
-        "createLabel": "Egy új Stock Taking létrehozása",
-        "createOrEditLabel": "Hozzon létre, vagy módosítson Stock Takingt",
-        "search": "Stock Taking keresése",
-        "notFound": "No Stock Taking found"
+        "title": "Leltárok",
+        "createLabel": "Egy új Leltár létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Leltárt",
+        "search": "Leltár keresése",
+        "notFound": "Nem található Leltár"
       },
-      "created": "Egy új Stock Taking lett létrehozva {{ param }} azonosítóval",
-      "updated": "A Stock Taking módosítva lett {{ param }} azonosítóval",
-      "deleted": "A Stock Taking törölve lett {{ param }} azonosítóval",
+      "created": "Egy új Leltár lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Leltár módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Leltár törölve lett {{ param }} azonosítóval",
       "delete": {
-        "question": "Biztos benne, hogy törölni szeretné az Stock Takingt {{ id }} azonosítóval?"
+        "question": "Biztos benne, hogy törölni szeretné az Leltárt {{ id }} azonosítóval?"
       },
       "detail": {
-        "title": "Stock Taking"
+        "title": "Leltár"
       },
-      "stockTakingDate": "Stock Taking Date",
-      "status": "Status"
+      "stockTakingDate": "Leltár dátuma",
+      "status": "Státusz"
     }
   }
 }

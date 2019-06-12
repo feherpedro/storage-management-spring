@@ -1,4 +1,5 @@
 import { Moment } from 'moment';
+import { OrderItem } from 'app/shared/model/order-item.model';
 
 export interface IOrderEntity {
   id?: number;
@@ -6,6 +7,8 @@ export interface IOrderEntity {
   paymentDate?: Moment;
   dueDate?: Moment;
   statusId?: number;
+  statusName?: string;
+  orderItemList?: OrderItem[];
 }
 
 export class OrderEntity implements IOrderEntity {
@@ -14,6 +17,10 @@ export class OrderEntity implements IOrderEntity {
     public createDate?: Moment,
     public paymentDate?: Moment,
     public dueDate?: Moment,
-    public statusId?: number
-  ) {}
+    public statusId?: number,
+    public statusName?: string,
+    public orderItemList?: OrderItem[]
+  ) {
+    this.orderItemList = [];
+  }
 }

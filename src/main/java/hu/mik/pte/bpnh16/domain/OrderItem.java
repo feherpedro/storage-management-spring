@@ -35,6 +35,7 @@ public class OrderItem implements Serializable {
     private OrderEntity orderEntity;
 
     @ManyToOne
+    @NotNull
     @JsonIgnoreProperties("orderItems")
     private Product product;
 

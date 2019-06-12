@@ -36,14 +36,14 @@
                     <label class="form-control-label" jhiTranslate="storageManagementSpringApp.orderItem.product" for="field_product">Product</label>
                     <select class="form-control" id="field_product" name="product" formControlName="productId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="productOption.id" *ngFor="let productOption of products; trackBy: trackProductById">{{productOption.id}}</option>
+                        <option [ngValue]="productOption.id" *ngFor="let productOption of products; trackBy: trackProductById">{{productOption.name}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="storageManagementSpringApp.orderItem.status" for="field_status">Status</label>
                     <select class="form-control" id="field_status" name="status" formControlName="statusId">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="statusOption.id" *ngFor="let statusOption of statuses; trackBy: trackStatusById">{{statusOption.id}}</option>
+                        <option [ngValue]="statusOption.id" *ngFor="let statusOption of statuses; trackBy: trackStatusById">{{statusOption.name}}</option>
                     </select>
                 </div>
             </div>

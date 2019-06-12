@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 import { SERVER_API_URL } from 'app/app.constants';
 import { createRequestOption } from 'app/shared';
 import { IOrderEntity } from 'app/shared/model/order-entity.model';
+import { OrderItem } from 'app/shared/model/order-item.model';
 
 type EntityResponseType = HttpResponse<IOrderEntity>;
 type EntityArrayResponseType = HttpResponse<IOrderEntity[]>;
@@ -85,5 +86,10 @@ export class OrderEntityService {
       });
     }
     return res;
+  }
+
+  placeIntoProducts(orderItems: OrderItem[], id: number): Observable<EntityResponseType> {
+    return null; /*this.http.post(`${this.resourceUrl}/${id}/placeIntoProducts`, orderItems, { observe: 'response' })
+    .toPromise().map((res: EntityResponseType) => this.convertResponse(res));*/
   }
 }

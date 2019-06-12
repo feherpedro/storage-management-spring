@@ -2,23 +2,23 @@
   "storageManagementSpringApp": {
     "status": {
       "home": {
-        "title": "Statuses",
-        "createLabel": "Egy új Status létrehozása",
-        "createOrEditLabel": "Hozzon létre, vagy módosítson Statust",
-        "search": "Status keresése",
-        "notFound": "No Status found"
+        "title": "Státuszok",
+        "createLabel": "Egy új Státusz létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Státuszt",
+        "search": "Státusz keresése",
+        "notFound": "Nem található Státusz"
       },
-      "created": "Egy új Status lett létrehozva {{ param }} azonosítóval",
-      "updated": "A Status módosítva lett {{ param }} azonosítóval",
-      "deleted": "A Status törölve lett {{ param }} azonosítóval",
+      "created": "Egy új Státusz lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Státusz módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Státusz törölve lett {{ param }} azonosítóval",
       "delete": {
-        "question": "Biztos benne, hogy törölni szeretné az Statust {{ id }} azonosítóval?"
+        "question": "Biztos benne, hogy törölni szeretné az Státuszt {{ id }} azonosítóval?"
       },
       "detail": {
-        "title": "Status"
+        "title": "Státusz"
       },
-      "name": "Name",
-      "code": "Code"
+      "name": "Név",
+      "code": "Kód"
     }
   }
 }
