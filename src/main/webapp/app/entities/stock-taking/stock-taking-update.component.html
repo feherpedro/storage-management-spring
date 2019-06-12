@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-stock-taking-heading" jhiTranslate="storageManagementSpringApp.stockTaking.home.createOrEditLabel">Create or edit a Stock Taking</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="storageManagementSpringApp.stockTaking.stockTakingDate" for="field_stockTakingDate">Stock Taking Date</label>
+                    <div class="input-group">
+                        <input id="field_stockTakingDate" type="text" class="form-control" name="stockTakingDate" ngbDatepicker  #stockTakingDateDp="ngbDatepicker" formControlName="stockTakingDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="stockTakingDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('stockTakingDate').invalid && (editForm.get('stockTakingDate').dirty || editForm.get('stockTakingDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('stockTakingDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="storageManagementSpringApp.stockTaking.status" for="field_status">Status</label>
+                    <select class="form-control" id="field_status" name="status" formControlName="statusId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="statusOption.id" *ngFor="let statusOption of statuses; trackBy: trackStatusById">{{statusOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

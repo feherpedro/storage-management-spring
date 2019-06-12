@@ -1,0 +1,28 @@
+{
+  "storageManagementSpringApp": {
+    "stockTakingItem": {
+      "home": {
+        "title": "Stock Taking Items",
+        "createLabel": "Create a new Stock Taking Item",
+        "createOrEditLabel": "Create or edit a Stock Taking Item",
+        "search": "Search for Stock Taking Item",
+        "notFound": "No Stock Taking Item found"
+      },
+      "created": "A new Stock Taking Item is created with identifier {{ param }}",
+      "updated": "A Stock Taking Item is updated with identifier {{ param }}",
+      "deleted": "A Stock Taking Item is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Stock Taking Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Stock Taking Item"
+      },
+      "oldQuantity": "Old Quantity",
+      "newQuantity": "New Quantity",
+      "difference": "Difference",
+      "stockTaking": "Stock Taking",
+      "product": "Product",
+      "status": "Status"
+    }
+  }
+}

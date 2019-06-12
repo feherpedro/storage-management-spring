@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stockTakingItem">
+            <h2><span jhiTranslate="storageManagementSpringApp.stockTakingItem.detail.title">Stock Taking Item</span> {{stockTakingItem.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="storageManagementSpringApp.stockTakingItem.oldQuantity">Old Quantity</span></dt>
+                <dd>
+                    <span>{{stockTakingItem.oldQuantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="storageManagementSpringApp.stockTakingItem.newQuantity">New Quantity</span></dt>
+                <dd>
+                    <span>{{stockTakingItem.newQuantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="storageManagementSpringApp.stockTakingItem.difference">Difference</span></dt>
+                <dd>
+                    <span>{{stockTakingItem.difference}}</span>
+                </dd>
+                <dt><span jhiTranslate="storageManagementSpringApp.stockTakingItem.stockTaking">Stock Taking</span></dt>
+                <dd>
+                    <div *ngIf="stockTakingItem.stockTakingId">
+                        <a [routerLink]="['/stock-taking', stockTakingItem.stockTakingId, 'view']">{{stockTakingItem.stockTakingId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="storageManagementSpringApp.stockTakingItem.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="stockTakingItem.productId">
+                        <a [routerLink]="['/product', stockTakingItem.productId, 'view']">{{stockTakingItem.productId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="storageManagementSpringApp.stockTakingItem.status">Status</span></dt>
+                <dd>
+                    <div *ngIf="stockTakingItem.statusId">
+                        <a [routerLink]="['/status', stockTakingItem.statusId, 'view']">{{stockTakingItem.statusId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/stock-taking-item', stockTakingItem.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

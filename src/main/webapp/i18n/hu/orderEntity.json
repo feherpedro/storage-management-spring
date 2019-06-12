@@ -1,0 +1,26 @@
+{
+  "storageManagementSpringApp": {
+    "orderEntity": {
+      "home": {
+        "title": "OrderEntities",
+        "createLabel": "Egy új Order Entity létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Order Entityt",
+        "search": "Order Entity keresése",
+        "notFound": "No Order Entity found"
+      },
+      "created": "Egy új Order Entity lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Order Entity módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Order Entity törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Order Entityt {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Order Entity"
+      },
+      "createDate": "Create Date",
+      "paymentDate": "Payment Date",
+      "dueDate": "Due Date",
+      "status": "Status"
+    }
+  }
+}

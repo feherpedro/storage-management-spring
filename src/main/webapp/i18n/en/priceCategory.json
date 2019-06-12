@@ -1,0 +1,24 @@
+{
+  "storageManagementSpringApp": {
+    "priceCategory": {
+      "home": {
+        "title": "Price Categories",
+        "createLabel": "Create a new Price Category",
+        "createOrEditLabel": "Create or edit a Price Category",
+        "search": "Search for Price Category",
+        "notFound": "No Price Category found"
+      },
+      "created": "A new Price Category is created with identifier {{ param }}",
+      "updated": "A Price Category is updated with identifier {{ param }}",
+      "deleted": "A Price Category is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Price Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Price Category"
+      },
+      "name": "Name",
+      "price": "Price"
+    }
+  }
+}
