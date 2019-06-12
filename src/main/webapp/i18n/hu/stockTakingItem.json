@@ -1,0 +1,28 @@
+{
+  "storageManagementSpringApp": {
+    "stockTakingItem": {
+      "home": {
+        "title": "StockTakingItems",
+        "createLabel": "Egy új Stock Taking Item létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Stock Taking Itemt",
+        "search": "Stock Taking Item keresése",
+        "notFound": "No Stock Taking Item found"
+      },
+      "created": "Egy új Stock Taking Item lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Stock Taking Item módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Stock Taking Item törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Stock Taking Itemt {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Stock Taking Item"
+      },
+      "oldQuantity": "Old Quantity",
+      "newQuantity": "New Quantity",
+      "difference": "Difference",
+      "stockTaking": "Stock Taking",
+      "product": "Product",
+      "status": "Status"
+    }
+  }
+}

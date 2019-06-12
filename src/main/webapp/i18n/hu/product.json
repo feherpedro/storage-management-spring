@@ -1,0 +1,30 @@
+{
+  "storageManagementSpringApp": {
+    "product": {
+      "home": {
+        "title": "Products",
+        "createLabel": "Egy új Product létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Productt",
+        "search": "Product keresése",
+        "notFound": "No Product found"
+      },
+      "created": "Egy új Product lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Product módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Product törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Productt {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Product"
+      },
+      "name": "Name",
+      "price": "Price",
+      "quantity": "Quantity",
+      "unitOfMeasurement": "Unit Of Measurement",
+      "barcode": "Barcode",
+      "productCategory": "Product Category",
+      "priceCategory": "Price Category",
+      "status": "Status"
+    }
+  }
+}

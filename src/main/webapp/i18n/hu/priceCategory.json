@@ -1,0 +1,24 @@
+{
+  "storageManagementSpringApp": {
+    "priceCategory": {
+      "home": {
+        "title": "PriceCategories",
+        "createLabel": "Egy új Price Category létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Price Categoryt",
+        "search": "Price Category keresése",
+        "notFound": "No Price Category found"
+      },
+      "created": "Egy új Price Category lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Price Category módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Price Category törölve lett {{ param }} azonosítóval",
+      "delete": {
+        "question": "Biztos benne, hogy törölni szeretné az Price Categoryt {{ id }} azonosítóval?"
+      },
+      "detail": {
+        "title": "Price Category"
+      },
+      "name": "Name",
+      "price": "Price"
+    }
+  }
+}

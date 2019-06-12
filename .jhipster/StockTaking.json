@@ -1,0 +1,31 @@
+{
+    "name": "StockTaking",
+    "fields": [
+        {
+            "fieldName": "stockTakingDate",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "status",
+            "otherEntityRelationshipName": "stockTaking",
+            "relationshipName": "status",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190612031445",
+    "entityTableName": "stock_taking",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": "elasticsearch"
+}
