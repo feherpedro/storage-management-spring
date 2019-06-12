@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "storageManagementSpring",
+    "packageName": "hu.mik.pte.bpnh16",
+    "packageFolder": "hu/mik/pte/bpnh16",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": true,
+    "nativeLanguage": "hu",
+    "languages": [
+      "en",
+      "hu"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.1.0",
+    "jwtSecretKey": "YWQ3NDQzMmVkZmIxNWFiZmExYTk1N2EyM2I1NmRjM2Y4MDYwZWUyZDc4NTg4ZmE5ODcyZWMyZWNlOTA5MGFkNzVjZTk1YjVlZWE3NWU1ODUzNmIxYTVkZTdkMmFiMTg3ZDU1ZGE5YzUxNzAzNzU1ZDgyZmYwZDVjMDg4NDMxYTE=",
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "feherpedro",
+  "repository-name": "storage-management-spring"
+}
