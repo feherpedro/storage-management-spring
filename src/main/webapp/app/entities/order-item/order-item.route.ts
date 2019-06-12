@@ -67,6 +67,16 @@ export const orderItemRoute: Routes = [
     },
     canActivate: [UserRouteAccessService]
   },
+  /*{ todo
+    path: 'new/:parent',
+    component: OrderItemPopupComponent,
+    data: {
+      authorities: ['ROLE_USER'],
+      pageTitle: 'storageManagementSpringApp.orderItem.home.title'
+    },
+    canActivate: [UserRouteAccessService],
+    outlet: 'popup'
+  },*/
   {
     path: ':id/edit',
     component: OrderItemUpdateComponent,

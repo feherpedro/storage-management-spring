@@ -3,7 +3,11 @@ export interface IOrderItem {
   quantity?: number;
   orderEntityId?: number;
   productId?: number;
+  productName?: string;
+  productUnitOfMeasurement?: string;
+  productBarcode?: string;
   statusId?: number;
+  statusName?: string;
 }
 
 export class OrderItem implements IOrderItem {
@@ -12,6 +16,10 @@ export class OrderItem implements IOrderItem {
     public quantity?: number,
     public orderEntityId?: number,
     public productId?: number,
-    public statusId?: number
+    public productName?: string,
+    public productUnitOfMeasurement?: string,
+    public productBarcode?: string,
+    public statusId?: number,
+    public statusName?: string
   ) {}
 }

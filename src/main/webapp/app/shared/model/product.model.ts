@@ -6,8 +6,11 @@ export interface IProduct {
   unitOfMeasurement?: string;
   barcode?: string;
   productCategoryId?: number;
+  productCategoryName?: string;
   priceCategoryId?: number;
+  priceCategoryName?: string;
   statusId?: number;
+  statusName?: string;
 }
 
 export class Product implements IProduct {
@@ -19,7 +22,10 @@ export class Product implements IProduct {
     public unitOfMeasurement?: string,
     public barcode?: string,
     public productCategoryId?: number,
+    public productCategoryName?: string,
     public priceCategoryId?: number,
-    public statusId?: number
+    public priceCategoryName?: string,
+    public statusId?: number,
+    public statusName?: string
   ) {}
 }

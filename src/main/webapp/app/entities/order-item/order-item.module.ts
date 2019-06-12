@@ -27,7 +27,8 @@ const ENTITY_STATES = [...orderItemRoute, ...orderItemPopupRoute];
   ],
   entryComponents: [OrderItemComponent, OrderItemUpdateComponent, OrderItemDeleteDialogComponent, OrderItemDeletePopupComponent],
   providers: [{ provide: JhiLanguageService, useClass: JhiLanguageService }],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  exports: [OrderItemComponent]
 })
 export class StorageManagementSpringOrderItemModule {
   constructor(private languageService: JhiLanguageService, private languageHelper: JhiLanguageHelper) {

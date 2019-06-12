@@ -18,13 +18,21 @@
                 <dt><span jhiTranslate="storageManagementSpringApp.orderItem.product">Product</span></dt>
                 <dd>
                     <div *ngIf="orderItem.productId">
-                        <a [routerLink]="['/product', orderItem.productId, 'view']">{{orderItem.productId}}</a>
+                        <a [routerLink]="['/product', orderItem.productId, 'view']">{{orderItem.productName}}</a>
                     </div>
+                </dd>
+                <dt><span jhiTranslate="storageManagementApp.orderItem.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{orderItem.quantity}}</span>
+                </dd>
+                <dt><span jhiTranslate="storageManagementApp.product.unitOfMeasurement">UnitOfMeasurement</span></dt>
+                <dd>
+                    <span>{{orderItem.productUnitOfMeasurement}}</span>
                 </dd>
                 <dt><span jhiTranslate="storageManagementSpringApp.orderItem.status">Status</span></dt>
                 <dd>
                     <div *ngIf="orderItem.statusId">
-                        <a [routerLink]="['/status', orderItem.statusId, 'view']">{{orderItem.statusId}}</a>
+                        <a [routerLink]="['/status', orderItem.statusId, 'view']">{{orderItem.statusName}}</a>
                     </div>
                 </dd>
             </dl>

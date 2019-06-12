@@ -28,19 +28,19 @@
                 <dt><span jhiTranslate="storageManagementSpringApp.product.productCategory">Product Category</span></dt>
                 <dd>
                     <div *ngIf="product.productCategoryId">
-                        <a [routerLink]="['/product-category', product.productCategoryId, 'view']">{{product.productCategoryId}}</a>
+                        <a [routerLink]="['/product-category', product.productCategoryId, 'view']">{{product.productCategoryName}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="storageManagementSpringApp.product.priceCategory">Price Category</span></dt>
                 <dd>
                     <div *ngIf="product.priceCategoryId">
-                        <a [routerLink]="['/price-category', product.priceCategoryId, 'view']">{{product.priceCategoryId}}</a>
+                        <a [routerLink]="['/price-category', product.priceCategoryId, 'view']">{{product.priceCategoryName}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="storageManagementSpringApp.product.status">Status</span></dt>
                 <dd>
                     <div *ngIf="product.statusId">
-                        <a [routerLink]="['/status', product.statusId, 'view']">{{product.statusId}}</a>
+                        <a [routerLink]="['/status', product.statusId, 'view']">{{product.statusName}}</a>
                     </div>
                 </dd>
             </dl>

@@ -7,14 +7,14 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entitások",
-        "product": "Product",
-        "productCategory": "Product Category",
-        "priceCategory": "Price Category",
-        "status": "Status",
-        "orderEntity": "Order Entity",
-        "orderItem": "Order Item",
-        "stockTaking": "Stock Taking",
-        "stockTakingItem": "Stock Taking Item",
+        "product": "Termékek",
+        "productCategory": "Termék kategóriák",
+        "priceCategory": "Ár kategóriák",
+        "status": "Státuszok",
+        "orderEntity": "Bevételezések",
+        "orderItem": "Bevételezendő termékek",
+        "stockTaking": "Leltározások",
+        "stockTakingItem": "Leltározandó termékek",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -71,13 +71,13 @@
       "validate": {
         "newpassword": {
           "required": "A jelszó kötelező.",
-          "minlength": "A jelszó legalább 6 karakterből kell, hogy álljon",
+          "minlength": "A jelszó legalább 4 karakterből kell, hogy álljon",
           "maxlength": "A jelszó nem lehet hosszabb mint 50 karakter",
           "strength": "A jelszó bonyolultsága:"
         },
         "confirmpassword": {
           "required": "A jelszó megerősítés kötelező.",
-          "minlength": "A jelszó megerősítés legalább 6 betűből kell, hogy álljon",
+          "minlength": "A jelszó megerősítés legalább 4 betűből kell, hogy álljon",
           "maxlength": "A jelszó megerősítés nem lehet hosszabb mint 50 betű"
         },
         "email": {
@@ -94,7 +94,7 @@
     "ribbon": {
       "dev": "Fejlesztői változat"
     },
-    "item-count": "Showing {{first}} - {{second}} of {{total}} items."
+    "item-count": "{{first}}. - {{second}}. elem a(z) {{total}} elemből"
   },
   "entity": {
     "action": {
@@ -118,7 +118,7 @@
     "validation": {
       "required": "Ez a mező kötelező.",
       "minlength": "Ez a mező legalább {{min}} karaktert kell, hogy tartalmazzon.",
-      "maxlength": "Ez a mező nem lehet hosszabb mint {{max}} karakter.",
+      "maxlength": "Ez a mező nem lehet hosszabb, mint {{max}} karakter.",
       "min": "Ennek a mezőnek a megengedett minimum értéke {{min}}.",
       "max": "Ennek a mezőnek a megengedett maximum értéke {{max}}.",
       "minbytes": "Ennek a mezőnek a megengedett minimum értéke {{min}} bytes.",

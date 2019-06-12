@@ -54,17 +54,17 @@
                 <td>{{product.barcode}}</td>
                 <td>
                     <div *ngIf="product.productCategoryId">
-                        <a [routerLink]="['../product-category', product.productCategoryId , 'view' ]" >{{product.productCategoryId}}</a>
+                        <a [routerLink]="['../product-category', product.productCategoryId , 'view' ]" >{{product.productCategoryName}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="product.priceCategoryId">
-                        <a [routerLink]="['../price-category', product.priceCategoryId , 'view' ]" >{{product.priceCategoryId}}</a>
+                        <a [routerLink]="['../price-category', product.priceCategoryId , 'view' ]" >{{product.priceCategoryName}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="product.statusId">
-                        <a [routerLink]="['../status', product.statusId , 'view' ]" >{{product.statusId}}</a>
+                        <a [routerLink]="['../status', product.statusId , 'view' ]" >{{product.statusName}}</a>
                     </div>
                 </td>
                 <td class="text-right">

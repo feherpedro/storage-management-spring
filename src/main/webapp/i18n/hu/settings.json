@@ -18,13 +18,13 @@
       "validate": {
         "firstname": {
           "required": "A keresztnév kötelező.",
-          "minlength": "A keresztnév legalább 1 betűböl kell, hogy álljon",
-          "maxlength": "A keresztnév nem lehet több, mint 50 betü"
+          "minlength": "A keresztnév legalább 1 betűből kell, hogy álljon!",
+          "maxlength": "A keresztnév nem lehet több, mint 50 betű!"
         },
         "lastname": {
           "required": "A családnév kötelező.",
-          "minlength": "A családnév legalább 1 betűböl kell, hogy álljon",
-          "maxlength": "A családnév nem lehet több, mint 50 betü"
+          "minlength": "A családnév legalább 1 betűből kell, hogy álljon!",
+          "maxlength": "A családnév nem lehet több, mint 50 betű!"
         }
       }
     }

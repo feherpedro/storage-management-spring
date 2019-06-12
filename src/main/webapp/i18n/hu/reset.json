@@ -7,8 +7,8 @@
       },
       "messages": {
         "info": "Adja meg email címét, amivel regisztrált",
-        "success": "Email címére elküldtük a leírást, hogyan állíthatja vissza jelszavát.",
-        "notfound": "<strong>Ezzel az email címmel nem regisztráltak!</strong> Kérjük ellenőrizze, és próbálja újra!"
+        "success": "Email címére elküldtem a leírást, hogyan állíthatja vissza jelszavát.",
+        "notfound": "<strong>Ezzel az email címmel nem regisztráltak!</strong> Kérjem ellenőrizze és próbálja újra!"
       }
     },
     "finish": {
