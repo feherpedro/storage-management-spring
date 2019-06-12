@@ -24,10 +24,7 @@
     "testFrameworks": [],
     "enableTranslation": true,
     "nativeLanguage": "hu",
-    "languages": [
-      "en",
-      "hu"
-    ],
+    "languages": ["en", "hu"],
     "clientFramework": "angularX",
     "jhiPrefix": "jhi",
     "jhipsterVersion": "6.1.0",
@@ -35,7 +32,9 @@
     "clientTheme": "none",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
-    "otherModules": []
+    "otherModules": [],
+    "herokuAppName": "storage-management-spring",
+    "herokuDeployType": "git"
   },
   "git-provider": "GitHub",
   "git-company": "feherpedro",
