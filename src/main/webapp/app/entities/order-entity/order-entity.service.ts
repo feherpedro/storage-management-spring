@@ -9,6 +9,7 @@ import { SERVER_API_URL } from 'app/app.constants';
 import { createRequestOption } from 'app/shared';
 import { IOrderEntity } from 'app/shared/model/order-entity.model';
 import { OrderItem } from 'app/shared/model/order-item.model';
+import { JhiDateUtils } from 'ng-jhipster';
 
 type EntityResponseType = HttpResponse<IOrderEntity>;
 type EntityArrayResponseType = HttpResponse<IOrderEntity[]>;
@@ -18,7 +19,7 @@ export class OrderEntityService {
   public resourceUrl = SERVER_API_URL + 'api/order-entities';
   public resourceSearchUrl = SERVER_API_URL + 'api/_search/order-entities';
 
-  constructor(protected http: HttpClient) {}
+  constructor(protected http: HttpClient, private dateUtils: JhiDateUtils) {}
 
   create(orderEntity: IOrderEntity): Observable<EntityResponseType> {
     const copy = this.convertDateFromClient(orderEntity);
@@ -89,7 +90,27 @@ export class OrderEntityService {
   }
 
   placeIntoProducts(orderItems: OrderItem[], id: number): Observable<EntityResponseType> {
-    return null; /*this.http.post(`${this.resourceUrl}/${id}/placeIntoProducts`, orderItems, { observe: 'response' })
-    .toPromise().map((res: EntityResponseType) => this.convertResponse(res));*/
+    return this.http
+      .post(`${this.resourceUrl}/${id}/placeIntoProducts`, orderItems, { observe: 'response' })
+      .pipe(map((res: EntityResponseType) => this.convertResponse(res)));
   }
+
+  private convertResponse(res: EntityResponseType): EntityResponseType {
+    const body: IOrderEntity = res.body;
+    return res.clone({ body });
+  }
+
+  /**
+   * Convert a returned JSON object to OrderEntity.
+   */
+  /*private convertItemFromServer(orderEntity: IOrderEntity): IOrderEntity {
+    const copy: IOrderEntity = Object.assign({}, orderEntity);
+    copy.createDate = this.dateUtils
+    .convertLocalDateFromServer(orderEntity.createDate);
+    copy.paymentDate = this.dateUtils
+    .convertLocalDateFromServer(orderEntity.paymentDate);
+    copy.dueDate = this.dateUtils
+    .convertLocalDateFromServer(orderEntity.dueDate);
+    return copy;
+  }*/
 }
