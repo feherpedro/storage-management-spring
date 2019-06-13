@@ -23,7 +23,7 @@ describe('Service Tests', () => {
       service = injector.get(ProductService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new Product(0, 'AAAAAAA', 0, 0, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new Product(0, 'AAAAAAA', 0, 0, 0, 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
