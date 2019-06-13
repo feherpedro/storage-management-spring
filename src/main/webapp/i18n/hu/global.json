@@ -44,8 +44,8 @@
     "form": {
       "username.label": "Azonosító",
       "username.placeholder": "Az Ön felhasználói neve",
-      "currentpassword.label": "Current password",
-      "currentpassword.placeholder": "Current password",
+      "currentpassword.label": "Jelenlegi jelszó",
+      "currentpassword.placeholder": "Jelenlegi jelszó",
       "newpassword.label": "Új jelszó",
       "newpassword.placeholder": "Új jelszava",
       "confirmpassword.label": "Új jelszó megerősítése",
