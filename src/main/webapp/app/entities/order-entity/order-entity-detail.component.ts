@@ -45,7 +45,7 @@ export class OrderEntityDetailComponent implements OnInit {
   onRaktarClick(orderEntity: OrderEntity) {
     this.orderEntityService.placeIntoProducts(orderEntity.orderItemList, orderEntity.id).subscribe(
       (response: HttpResponse<OrderEntity>) => {
-        this.jhiAlertService.success('storageManagementApp.orderEntity.raktarbaFelveve', response.body.id, null);
+        this.jhiAlertService.success('storageManagementSpringApp.orderEntity.raktarbaFelveve', response.body.id, null);
         this.eventManager.broadcast({ name: 'orderEntityListModification', content: 'OK' });
       },
       (response: HttpErrorResponse) => this.onError(response.message)

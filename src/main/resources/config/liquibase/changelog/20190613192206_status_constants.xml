@@ -1,0 +1,37 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="Peter (generated)" id="1528195994868-4">
+        <insert tableName="status">
+            <column name="id" value="99996">
+            </column>
+            <column name="name" value="Raktáron">
+            </column>
+            <column name="code" value="RAKTARON">
+            </column>
+        </insert>
+        <insert tableName="status">
+            <column name="id" value="99997">
+            </column>
+            <column name="name" value="Nincs raktáron">
+            </column>
+            <column name="code" value="NINCSRAKTARON">
+            </column>
+        </insert>
+        <insert tableName="status">
+            <column name="id" value="99998">
+            </column>
+            <column name="name" value="Feldolgozás alatt">
+            </column>
+            <column name="code" value="FELDOLGOZASALATT">
+            </column>
+        </insert>
+        <insert tableName="status">
+            <column name="id" value="99999">
+            </column>
+            <column name="name" value="Lezárva">
+            </column>
+            <column name="code" value="LEZARVA">
+            </column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
