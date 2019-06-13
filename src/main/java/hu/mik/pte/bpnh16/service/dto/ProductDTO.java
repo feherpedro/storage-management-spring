@@ -10,8 +10,10 @@ public class ProductDTO implements Serializable {
 
     private Long id;
 
-    @NotNull
+    @NotBlank
     private String name;
+
+    private Double costPrice;
 
     private Double price;
 
@@ -19,7 +21,9 @@ public class ProductDTO implements Serializable {
 
     private String unitOfMeasurement;
 
-    @NotNull
+    private String manufacturer;
+
+    @NotBlank
     private String barcode;
 
     private Long productCategoryId;
@@ -49,6 +53,14 @@ public class ProductDTO implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Double getCostPrice() {
+        return costPrice;
+    }
+
+    public void setCostPrice(Double costPrice) {
+        this.costPrice = costPrice;
     }
 
     public Double getPrice() {
@@ -129,6 +141,14 @@ public class ProductDTO implements Serializable {
 
     public void setStatusName(String statusName) {
         this.statusName = statusName;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     @Override

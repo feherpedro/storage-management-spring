@@ -18,7 +18,7 @@
         "title": "Price Category"
       },
       "name": "Name",
-      "price": "Price"
+      "price": "Tax rate"
     }
   }
 }

@@ -9,6 +9,10 @@
                 <dd>
                     <span>{{product.name}}</span>
                 </dd>
+                <dt *ngIf="product.costPrice"><span jhiTranslate="storageManagementSpringApp.product.costPrice">Cost Price</span></dt>
+                <dd *ngIf="product.costPrice">
+                    <span>{{product.costPrice}}</span>
+                </dd>
                 <dt><span jhiTranslate="storageManagementSpringApp.product.price">Price</span></dt>
                 <dd>
                     <span>{{product.price}}</span>
@@ -21,24 +25,28 @@
                 <dd>
                     <span>{{product.unitOfMeasurement}}</span>
                 </dd>
+                <dt *ngIf="product.manufacturer"><span jhiTranslate="storageManagementSpringApp.product.manufacturer">Manufacturer</span></dt>
+                <dd *ngIf="product.manufacturer">
+                    <span>{{product.manufacturer}}</span>
+                </dd>
                 <dt><span jhiTranslate="storageManagementSpringApp.product.barcode">Barcode</span></dt>
                 <dd>
                     <span>{{product.barcode}}</span>
                 </dd>
-                <dt><span jhiTranslate="storageManagementSpringApp.product.productCategory">Product Category</span></dt>
-                <dd>
+                <dt *ngIf="product.productCategoryId"><span jhiTranslate="storageManagementSpringApp.product.productCategory">Product Category</span></dt>
+                <dd *ngIf="product.productCategoryId">
                     <div *ngIf="product.productCategoryId">
                         <a [routerLink]="['/product-category', product.productCategoryId, 'view']">{{product.productCategoryName}}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="storageManagementSpringApp.product.priceCategory">Price Category</span></dt>
-                <dd>
+                <dt *ngIf="product.priceCategoryId"><span jhiTranslate="storageManagementSpringApp.product.priceCategory">Price Category</span></dt>
+                <dd *ngIf="product.priceCategoryId">
                     <div *ngIf="product.priceCategoryId">
                         <a [routerLink]="['/price-category', product.priceCategoryId, 'view']">{{product.priceCategoryName}}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="storageManagementSpringApp.product.status">Status</span></dt>
-                <dd>
+                <dt *ngIf="product.statusId"><span jhiTranslate="storageManagementSpringApp.product.status">Status</span></dt>
+                <dd *ngIf="product.statusId">
                     <div *ngIf="product.statusId">
                         <a [routerLink]="['/status', product.statusId, 'view']">{{product.statusName}}</a>
                     </div>

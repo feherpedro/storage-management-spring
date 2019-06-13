@@ -18,9 +18,11 @@
         "title": "Termék"
       },
       "name": "Név",
-      "price": "Ár",
+      "costPrice": "Bevételezési ár",
+      "price": "Eladási ár",
       "quantity": "Mennyiség",
       "unitOfMeasurement": "Mértékegység",
+      "manufacturer": "Gyártó",
       "barcode": "Vonalkód",
       "productCategory": "Termék kategória",
       "priceCategory": "Ár kategória",

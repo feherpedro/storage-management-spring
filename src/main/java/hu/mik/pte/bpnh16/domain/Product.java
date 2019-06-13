@@ -36,6 +36,9 @@ public class Product implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "cost_price")
+    private Double costPrice;
+
     @Column(name = "price")
     private Double price;
 
@@ -44,6 +47,9 @@ public class Product implements Serializable {
 
     @Column(name = "unit_of_measurement")
     private String unitOfMeasurement;
+
+    @Column(name = "manufacturer")
+    private String manufacturer;
 
     @NotBlank
     @Column(name = "barcode", nullable = false, unique = true)
@@ -81,6 +87,14 @@ public class Product implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Double getCostPrice() {
+        return costPrice;
+    }
+
+    public void setCostPrice(Double costPrice) {
+        this.costPrice = costPrice;
     }
 
     public Double getPrice() {
@@ -172,6 +186,14 @@ public class Product implements Serializable {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -34,9 +34,11 @@
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="name"><span jhiTranslate="storageManagementSpringApp.product.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="costPrice"><span jhiTranslate="storageManagementSpringApp.product.costPrice">Cost Price</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="price"><span jhiTranslate="storageManagementSpringApp.product.price">Price</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="quantity"><span jhiTranslate="storageManagementSpringApp.product.quantity">Quantity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="unitOfMeasurement"><span jhiTranslate="storageManagementSpringApp.product.unitOfMeasurement">Unit Of Measurement</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="manufacturer"><span jhiTranslate="storageManagementSpringApp.product.manufacturer">Manufacturer</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="barcode"><span jhiTranslate="storageManagementSpringApp.product.barcode">Barcode</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="productCategoryId"><span jhiTranslate="storageManagementSpringApp.product.productCategory">Product Category</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="priceCategoryId"><span jhiTranslate="storageManagementSpringApp.product.priceCategory">Price Category</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -48,9 +50,11 @@
             <tr *ngFor="let product of products ;trackBy: trackId">
                 <td><a [routerLink]="['/product', product.id, 'view' ]">{{product.id}}</a></td>
                 <td>{{product.name}}</td>
+                <td>{{product.costPrice}}</td>
                 <td>{{product.price}}</td>
                 <td>{{product.quantity}}</td>
                 <td>{{product.unitOfMeasurement}}</td>
+                <td>{{product.manufacturer}}</td>
                 <td>{{product.barcode}}</td>
                 <td>
                     <div *ngIf="product.productCategoryId">
