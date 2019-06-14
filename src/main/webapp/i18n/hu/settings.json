@@ -4,9 +4,9 @@
     "form": {
       "firstname": "Keresztnév",
       "firstname.placeholder": "Az Ön keresztneve",
-      "lastname": "Családnév",
-      "lastname.placeholder": "Az Ön családneve",
-      "language": "Nyelvek",
+      "lastname": "Vezetéknév",
+      "lastname.placeholder": "Az Ön vezetékneve",
+      "language": "Nyelv",
       "button": "Mentés"
     },
     "messages": {
@@ -22,9 +22,9 @@
           "maxlength": "A keresztnév nem lehet több, mint 50 betű!"
         },
         "lastname": {
-          "required": "A családnév kötelező.",
-          "minlength": "A családnév legalább 1 betűből kell, hogy álljon!",
-          "maxlength": "A családnév nem lehet több, mint 50 betű!"
+          "required": "A vezetéknév kötelező.",
+          "minlength": "A vezetéknév legalább 1 betűből kell, hogy álljon!",
+          "maxlength": "A vezetéknév nem lehet több, mint 50 betű!"
         }
       }
     }
