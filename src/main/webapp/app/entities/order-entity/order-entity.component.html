@@ -37,6 +37,10 @@
             <th jhiSortBy="paymentDate"><span jhiTranslate="storageManagementSpringApp.orderEntity.paymentDate">Payment Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dueDate"><span jhiTranslate="storageManagementSpringApp.orderEntity.dueDate">Due Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="statusId"><span jhiTranslate="storageManagementSpringApp.orderEntity.status">Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th><!-- jhiSortBy="orderItemList"-->
+                <span jhiTranslate="storageManagementSpringApp.orderEntity.orderItemListLength">OrderItemListLength</span>
+                <!--<span class="fa fa-sort"></span>-->
+            </th>
             <th></th>
             </tr>
             </thead>
@@ -48,9 +52,10 @@
                 <td>{{orderEntity.dueDate | date:'mediumDate'}}</td>
                 <td>
                     <div *ngIf="orderEntity.statusId">
-                        <a [routerLink]="['../status', orderEntity.statusId , 'view' ]" >{{orderEntity.statusId}}</a>
+                        <a [routerLink]="['../status', orderEntity.statusId , 'view' ]" >{{orderEntity.statusName}}</a>
                     </div>
                 </td>
+                <td>{{orderEntity.orderItemList.length}}</td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"
@@ -59,11 +64,18 @@
                             <fa-icon [icon]="'eye'"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
                         </button>
-                        <button type="submit"
+                        <button type="submit" *ngIf="!isFinalized(orderEntity.statusId)"
                                 [routerLink]="['/order-entity', orderEntity.id, 'edit']"
                                 class="btn btn-primary btn-sm">
                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button *ngIf="!isFinalized(orderEntity.statusId)" type="submit"
+                                [disabled]="orderEntity.orderItemList.length < 1"
+                                (click)="onRaktarClick(orderEntity)"
+                                class="btn btn-success btn-sm">
+                            <span class="fa fa-check"></span>
+                            <span class="d-none d-md-inline">Raktárba</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', 'order-entity', { outlets: { popup: orderEntity.id + '/delete'} }]"

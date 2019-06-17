@@ -38,7 +38,6 @@ public class ProductDTO implements Serializable {
 
     private String statusName;
 
-
     public Long getId() {
         return id;
     }

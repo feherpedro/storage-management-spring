@@ -2,11 +2,11 @@
   "storageManagementSpringApp": {
     "orderItem": {
       "home": {
-        "title": "Rendelési tétel",
+        "title": "Rendelési tételek",
         "createLabel": "Egy új Rendelési tétel létrehozása",
         "createOrEditLabel": "Hozzon létre, vagy módosítson Rendelési tételt",
         "search": "Rendelési tétel keresése",
-        "notFound": "Nem található Rendelési tétel found"
+        "notFound": "Nem található Rendelési tétel"
       },
       "created": "Egy új Rendelési tétel lett létrehozva {{ param }} azonosítóval",
       "updated": "A Rendelési tétel módosítva lett {{ param }} azonosítóval",

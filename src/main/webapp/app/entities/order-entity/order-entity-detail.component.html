@@ -7,15 +7,15 @@
             <dl class="row-md jh-entity-details">
                 <dt><span jhiTranslate="storageManagementSpringApp.orderEntity.createDate">Create Date</span></dt>
                 <dd>
-                    <span>{{orderEntity.createDate}}</span>
+                    <span>{{orderEntity.createDate | date:'mediumDate'}}</span>
                 </dd>
                 <dt><span jhiTranslate="storageManagementSpringApp.orderEntity.paymentDate">Payment Date</span></dt>
                 <dd>
-                    <span>{{orderEntity.paymentDate}}</span>
+                    <span>{{orderEntity.paymentDate | date:'mediumDate'}}</span>
                 </dd>
                 <dt><span jhiTranslate="storageManagementSpringApp.orderEntity.dueDate">Due Date</span></dt>
                 <dd>
-                    <span>{{orderEntity.dueDate}}</span>
+                    <span>{{orderEntity.dueDate | date:'mediumDate'}}</span>
                 </dd>
                 <dt><span jhiTranslate="storageManagementSpringApp.orderEntity.status">Status</span></dt>
                 <dd>
@@ -46,7 +46,7 @@
             </button>
         </div>
 
-<!--        <jhi-order-item class="mt-3" [orderEntity]="orderEntity" (hasItems)="hasItemsEmit($event)"></jhi-order-item>-->
+        <jhi-order-item class="mt-3" [orderEntity]="orderEntity" (hasItems)="hasItemsEmit($event)"></jhi-order-item>
 
     </div>
 </div>

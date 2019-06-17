@@ -12,6 +12,7 @@ import { OrderEntityDetailComponent } from './order-entity-detail.component';
 import { OrderEntityUpdateComponent } from './order-entity-update.component';
 import { OrderEntityDeletePopupComponent } from './order-entity-delete-dialog.component';
 import { IOrderEntity } from 'app/shared/model/order-entity.model';
+import { OrderItemDeletePopupComponent, OrderItemResolve, OrderItemUpdateComponent } from 'app/entities/order-item';
 
 @Injectable({ providedIn: 'root' })
 export class OrderEntityResolve implements Resolve<IOrderEntity> {
@@ -91,6 +92,49 @@ export const orderEntityPopupRoute: Routes = [
     data: {
       authorities: ['ROLE_USER'],
       pageTitle: 'storageManagementSpringApp.orderEntity.home.title'
+    },
+    canActivate: [UserRouteAccessService],
+    outlet: 'popup'
+  }
+];
+
+export const orderItemRoute: Routes = [
+  {
+    path: ':parentId/order-item/new',
+    component: OrderItemUpdateComponent,
+    resolve: {
+      orderItem: OrderItemResolve
+    },
+    data: {
+      authorities: ['ROLE_USER'],
+      pageTitle: 'storageManagementSpringApp.orderItem.home.title'
+    },
+    canActivate: [UserRouteAccessService]
+  },
+  {
+    path: ':parentId/order-item/:id/edit',
+    component: OrderItemUpdateComponent,
+    resolve: {
+      orderItem: OrderItemResolve
+    },
+    data: {
+      authorities: ['ROLE_USER'],
+      pageTitle: 'storageManagementSpringApp.orderItem.home.title'
+    },
+    canActivate: [UserRouteAccessService]
+  }
+];
+
+export const orderItemPopupRoute: Routes = [
+  {
+    path: ':parentId/order-item/:id/delete',
+    component: OrderItemDeletePopupComponent,
+    resolve: {
+      orderItem: OrderItemResolve
+    },
+    data: {
+      authorities: ['ROLE_USER'],
+      pageTitle: 'storageManagementSpringApp.orderItem.home.title'
     },
     canActivate: [UserRouteAccessService],
     outlet: 'popup'

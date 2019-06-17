@@ -10,6 +10,8 @@ import { AccountService } from 'app/core';
 
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { OrderEntityService } from './order-entity.service';
+import { OrderItemService } from 'app/entities/order-item';
+import { QueryConstants } from 'app/shared/constants/query.constants';
 
 @Component({
   selector: 'jhi-order-entity',
@@ -34,6 +36,7 @@ export class OrderEntityComponent implements OnInit, OnDestroy {
   constructor(
     protected orderEntityService: OrderEntityService,
     protected parseLinks: JhiParseLinks,
+    private orderItemService: OrderItemService,
     protected jhiAlertService: JhiAlertService,
     protected accountService: AccountService,
     protected activatedRoute: ActivatedRoute,
@@ -163,5 +166,19 @@ export class OrderEntityComponent implements OnInit, OnDestroy {
 
   protected onError(errorMessage: string) {
     this.jhiAlertService.error(errorMessage, null, null);
+  }
+
+  isFinalized(statusId: number): boolean {
+    return statusId === QueryConstants.orderStatus.LEZARVA;
+  }
+
+  onRaktarClick(orderEntity: IOrderEntity) {
+    this.orderEntityService.placeIntoProducts(orderEntity.orderItemList, orderEntity.id).subscribe(
+      (response: HttpResponse<IOrderEntity>) => {
+        this.jhiAlertService.success('storageManagementApp.orderEntity.raktarbaFelveve', response.body.id, null);
+        this.eventManager.broadcast({ name: 'orderEntityListModification', content: 'OK' });
+      },
+      (response: HttpErrorResponse) => this.onError(response.message)
+    );
   }
 }

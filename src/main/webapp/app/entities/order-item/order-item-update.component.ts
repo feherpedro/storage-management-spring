@@ -21,6 +21,7 @@ import { StatusService } from 'app/entities/status';
 export class OrderItemUpdateComponent implements OnInit {
   isSaving: boolean;
 
+  parentOrderId: number;
   orderentities: IOrderEntity[];
 
   products: IProduct[];
@@ -30,8 +31,8 @@ export class OrderItemUpdateComponent implements OnInit {
   editForm = this.fb.group({
     id: [],
     quantity: [null, [Validators.required]],
-    orderEntityId: [],
-    productId: [],
+    orderEntityId: [{ value: this.parentOrderId, disabled: true }],
+    productId: [null, [Validators.required]],
     statusId: []
   });
 
@@ -50,13 +51,19 @@ export class OrderItemUpdateComponent implements OnInit {
     this.activatedRoute.data.subscribe(({ orderItem }) => {
       this.updateForm(orderItem);
     });
-    this.orderEntityService
+    this.activatedRoute.paramMap.subscribe(params => {
+      const parent = params.get('parentId');
+      if (parent != null) {
+        this.parentOrderId = +parent;
+      }
+    });
+    /*this.orderEntityService
       .query()
       .pipe(
         filter((mayBeOk: HttpResponse<IOrderEntity[]>) => mayBeOk.ok),
         map((response: HttpResponse<IOrderEntity[]>) => response.body)
       )
-      .subscribe((res: IOrderEntity[]) => (this.orderentities = res), (res: HttpErrorResponse) => this.onError(res.message));
+      .subscribe((res: IOrderEntity[]) => (this.orderentities = res), (res: HttpErrorResponse) => this.onError(res.message));*/
     this.productService
       .query()
       .pipe(
@@ -102,10 +109,10 @@ export class OrderItemUpdateComponent implements OnInit {
       ...new OrderItem(),
       id: this.editForm.get(['id']).value,
       quantity: this.editForm.get(['quantity']).value,
-      orderEntityId: this.editForm.get(['orderEntityId']).value,
+      orderEntityId: this.parentOrderId,
       productId: this.editForm.get(['productId']).value,
       statusId: this.editForm.get(['statusId']).value
-    };
+    }; /*this.editForm.get(['orderEntityId']).value*/
     return entity;
   }
 

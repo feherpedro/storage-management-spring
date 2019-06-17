@@ -9,6 +9,26 @@
                     <input type="text" class="form-control" id="id" name="id" formControlName="id"
                         readonly />
                 </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="storageManagementSpringApp.orderItem.orderEntity">Order Entity</label>
+                    <input type="number" disabled [value]="parentOrderId" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="storageManagementSpringApp.orderItem.product" for="field_product">Product</label>
+                    <select class="form-control" id="field_product" name="product" formControlName="productId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="productOption.id" *ngFor="let productOption of products; trackBy: trackProductById">{{productOption.name}}</option>
+                    </select>
+                    <div *ngIf="editForm.get('productId').invalid && (editForm.get('productId').dirty || editForm.get('productId').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('productId').errors.required" jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="storageManagementSpringApp.orderItem.quantity" for="field_quantity">Quantity</label>
                     <input type="number" class="form-control" name="quantity" id="field_quantity"
@@ -25,20 +45,6 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="storageManagementSpringApp.orderItem.orderEntity" for="field_orderEntity">Order Entity</label>
-                    <select class="form-control" id="field_orderEntity" name="orderEntity" formControlName="orderEntityId">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="orderEntityOption.id" *ngFor="let orderEntityOption of orderentities; trackBy: trackOrderEntityById">{{orderEntityOption.id}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="storageManagementSpringApp.orderItem.product" for="field_product">Product</label>
-                    <select class="form-control" id="field_product" name="product" formControlName="productId">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="productOption.id" *ngFor="let productOption of products; trackBy: trackProductById">{{productOption.name}}</option>
-                    </select>
-                </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="storageManagementSpringApp.orderItem.status" for="field_status">Status</label>
                     <select class="form-control" id="field_status" name="status" formControlName="statusId">

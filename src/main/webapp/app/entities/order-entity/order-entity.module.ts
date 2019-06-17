@@ -11,11 +11,13 @@ import {
   OrderEntityDeletePopupComponent,
   OrderEntityDeleteDialogComponent,
   orderEntityRoute,
-  orderEntityPopupRoute
+  orderEntityPopupRoute,
+  orderItemRoute,
+  orderItemPopupRoute
 } from './';
 import { StorageManagementSpringOrderItemModule } from 'app/entities/order-item/order-item.module';
 
-const ENTITY_STATES = [...orderEntityRoute, ...orderEntityPopupRoute];
+const ENTITY_STATES = [...orderEntityRoute, ...orderEntityPopupRoute, ...orderItemRoute, ...orderItemPopupRoute];
 
 @NgModule({
   imports: [StorageManagementSpringSharedModule, StorageManagementSpringOrderItemModule, RouterModule.forChild(ENTITY_STATES)],

@@ -1,7 +1,7 @@
-<div>
+<div class="mt-5">
     <h2 id="page-heading">
         <span jhiTranslate="storageManagementSpringApp.orderItem.home.title">Order Items</span>
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-order-item" [routerLink]="['/order-item/new']">
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-order-item" [routerLink]="['/order-entity', orderEntity.id,'order-item','new']">
             <fa-icon [icon]="'plus'"></fa-icon>
             <span class="hidden-sm-down"  jhiTranslate="storageManagementSpringApp.orderItem.home.createLabel">
             Create new Order Item
@@ -32,7 +32,7 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+<!--            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>-->
             <th jhiSortBy="quantity"><span jhiTranslate="storageManagementSpringApp.orderItem.quantity">Quantity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="orderEntityId"><span jhiTranslate="storageManagementSpringApp.orderItem.orderEntity">Order Entity</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="productId"><span jhiTranslate="storageManagementSpringApp.orderItem.product">Product</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -42,45 +42,46 @@
             </thead>
             <tbody>
             <tr *ngFor="let orderItem of orderItems ;trackBy: trackId">
-                <td><a [routerLink]="['/order-item', orderItem.id, 'view' ]">{{orderItem.id}}</a></td>
-                <td>{{orderItem.quantity}}</td>
+                <!--<td><a [routerLink]="['/order-entity', orderEntity.id, '/order-item', orderItem.id, 'view' ]">{{orderItem.id}}</a></td>
                 <td>
                     <div *ngIf="orderItem.orderEntityId">
                         <a [routerLink]="['../order-entity', orderItem.orderEntityId , 'view' ]" >{{orderItem.orderEntityId}}</a>
                     </div>
-                </td>
+                </td>-->
                 <td>
                     <div *ngIf="orderItem.productId">
-                        <a [routerLink]="['../product', orderItem.productId , 'view' ]" >{{orderItem.productId}}</a>
+                        <a [routerLink]="['/product', orderItem.productId , 'view' ]" >{{orderItem.productName}}</a>
                     </div>
                 </td>
+                <td>{{orderItem.quantity}}</td>
+                <td>{{orderItem.productUnitOfMeasurement}}</td>
                 <td>
                     <div *ngIf="orderItem.statusId">
-                        <a [routerLink]="['../status', orderItem.statusId , 'view' ]" >{{orderItem.statusId}}</a>
+                        <a [routerLink]="['/status', orderItem.statusId , 'view' ]" >{{orderItem.statusName}}</a>
                     </div>
                 </td>
                 <td class="text-right">
                     <div class="btn-group">
+<!--                        <button type="submit"-->
+<!--                                [routerLink]="['/order-item', orderItem.id, 'view' ]"-->
+<!--                                class="btn btn-info btn-sm">-->
+<!--                            <fa-icon [icon]="'eye'"></fa-icon>-->
+<!--                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>-->
+<!--                        </button>-->
                         <button type="submit"
-                                [routerLink]="['/order-item', orderItem.id, 'view' ]"
-                                class="btn btn-info btn-sm">
-                            <fa-icon [icon]="'eye'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-                        </button>
-                        <button type="submit"
-                                [routerLink]="['/order-item', orderItem.id, 'edit']"
+                                [routerLink]="['/order-entity', orderEntity.id, 'order-item', orderItem.id, 'edit']"
                                 class="btn btn-primary btn-sm">
                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
                         <button type="submit"
-                                [routerLink]="['/', 'order-item', { outlets: { popup: orderItem.id + '/delete'} }]"
-                                replaceUrl="true"
-                                queryParamsHandling="merge"
+                                (click)="delete(orderItem.id)"
                                 class="btn btn-danger btn-sm">
                             <fa-icon [icon]="'times'"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
-                        </button>
+                        </button><!--[routerLink]="['/order-entity', orderEntity.id, 'order-item', { outlets: { popup: orderEntity.id + '/order-item/' + orderItem.id + '/delete'} }]"
+                        replaceUrl="true"
+                        queryParamsHandling="merge"-->
                     </div>
                 </td>
             </tr>

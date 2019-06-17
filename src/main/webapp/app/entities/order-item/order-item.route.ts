@@ -31,7 +31,7 @@ export class OrderItemResolve implements Resolve<IOrderItem> {
 
 export const orderItemRoute: Routes = [
   {
-    path: '',
+    path: 'order-entity/:id/order-item',
     component: OrderItemComponent,
     resolve: {
       pagingParams: JhiResolvePagingParams
@@ -44,7 +44,7 @@ export const orderItemRoute: Routes = [
     canActivate: [UserRouteAccessService]
   },
   {
-    path: ':id/view',
+    path: 'order-entity/:id/view/order-item/:id/view',
     component: OrderItemDetailComponent,
     resolve: {
       orderItem: OrderItemResolve
@@ -56,7 +56,7 @@ export const orderItemRoute: Routes = [
     canActivate: [UserRouteAccessService]
   },
   {
-    path: 'new',
+    path: 'order-entity/:id/order-item/new',
     component: OrderItemUpdateComponent,
     resolve: {
       orderItem: OrderItemResolve
@@ -67,18 +67,20 @@ export const orderItemRoute: Routes = [
     },
     canActivate: [UserRouteAccessService]
   },
-  /*{ todo
-    path: 'new/:parent',
-    component: OrderItemPopupComponent,
+  {
+    path: 'order-entity/:id/view/order-item/new/:parent',
+    component: OrderItemUpdateComponent,
+    resolve: {
+      orderItem: OrderItemResolve
+    },
     data: {
       authorities: ['ROLE_USER'],
       pageTitle: 'storageManagementSpringApp.orderItem.home.title'
     },
-    canActivate: [UserRouteAccessService],
-    outlet: 'popup'
-  },*/
+    canActivate: [UserRouteAccessService]
+  },
   {
-    path: ':id/edit',
+    path: 'order-entity/:id/view/order-item/:id/edit',
     component: OrderItemUpdateComponent,
     resolve: {
       orderItem: OrderItemResolve
@@ -93,7 +95,7 @@ export const orderItemRoute: Routes = [
 
 export const orderItemPopupRoute: Routes = [
   {
-    path: ':id/delete',
+    path: '/order-item/:id/delete',
     component: OrderItemDeletePopupComponent,
     resolve: {
       orderItem: OrderItemResolve
