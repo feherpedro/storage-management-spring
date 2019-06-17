@@ -1,4 +1,5 @@
 package hu.mik.pte.bpnh16.domain;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -32,6 +33,7 @@ public class OrderItem implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("orderItems")
+    @JsonBackReference
     private OrderEntity orderEntity;
 
     @ManyToOne

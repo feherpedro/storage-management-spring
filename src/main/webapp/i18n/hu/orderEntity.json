@@ -2,20 +2,20 @@
   "storageManagementSpringApp": {
     "orderEntity": {
       "home": {
-        "title": "Rendelések",
-        "createLabel": "Egy új Rendelés létrehozása",
-        "createOrEditLabel": "Hozzon létre, vagy módosítson Rendelést",
-        "search": "Rendelés keresése",
-        "notFound": "Nem található Rendelés"
+        "title": "Bevételezések",
+        "createLabel": "Egy új Bevételezés létrehozása",
+        "createOrEditLabel": "Hozzon létre, vagy módosítson Bevételezést",
+        "search": "Bevételezés keresése",
+        "notFound": "Nem található Bevételezés"
       },
-      "created": "Egy új Rendelés lett létrehozva {{ param }} azonosítóval",
-      "updated": "A Rendelés módosítva lett {{ param }} azonosítóval",
-      "deleted": "A Rendelés törölve lett {{ param }} azonosítóval",
+      "created": "Egy új Bevételezés lett létrehozva {{ param }} azonosítóval",
+      "updated": "A Bevételezés módosítva lett {{ param }} azonosítóval",
+      "deleted": "A Bevételezés törölve lett {{ param }} azonosítóval",
       "delete": {
-        "question": "Biztos benne, hogy törölni szeretné a Rendelést {{ id }} azonosítóval?"
+        "question": "Biztos benne, hogy törölni szeretné a Bevételezést {{ id }} azonosítóval?"
       },
       "detail": {
-        "title": "Rendelés"
+        "title": "Bevételezés"
       },
       "createDate": "Létrehozás dátuma",
       "paymentDate": "Fizetés dátuma",
