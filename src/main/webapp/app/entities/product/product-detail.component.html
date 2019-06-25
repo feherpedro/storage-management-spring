@@ -11,11 +11,11 @@
                 </dd>
                 <dt *ngIf="product.costPrice"><span jhiTranslate="storageManagementSpringApp.product.costPrice">Cost Price</span></dt>
                 <dd *ngIf="product.costPrice">
-                    <span>{{product.costPrice}}</span>
+                    <span>{{product.costPrice}} Ft</span>
                 </dd>
                 <dt><span jhiTranslate="storageManagementSpringApp.product.price">Price</span></dt>
                 <dd>
-                    <span>{{product.price}}</span>
+                    <span>{{product.price}} Ft</span>
                 </dd>
                 <dt><span jhiTranslate="storageManagementSpringApp.product.quantity">Quantity</span></dt>
                 <dd>
@@ -59,7 +59,7 @@
                 <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
             </button>
 
-            <button type="button"
+            <button type="button" *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_STOREKEEPER']"
                     [routerLink]="['/product', product.id, 'edit']"
                     class="btn btn-primary">
                 <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>

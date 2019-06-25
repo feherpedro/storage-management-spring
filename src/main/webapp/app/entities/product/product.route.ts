@@ -62,7 +62,7 @@ export const productRoute: Routes = [
       product: ProductResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: ['ROLE_ADMIN', 'ROLE_STOREKEEPER'],
       pageTitle: 'storageManagementSpringApp.product.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -74,7 +74,7 @@ export const productRoute: Routes = [
       product: ProductResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: ['ROLE_ADMIN', 'ROLE_STOREKEEPER'],
       pageTitle: 'storageManagementSpringApp.product.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -89,7 +89,7 @@ export const productPopupRoute: Routes = [
       product: ProductResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: ['ROLE_ADMIN', 'ROLE_STOREKEEPER'],
       pageTitle: 'storageManagementSpringApp.product.home.title'
     },
     canActivate: [UserRouteAccessService],

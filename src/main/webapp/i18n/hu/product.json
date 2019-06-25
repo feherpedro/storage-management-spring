@@ -21,7 +21,7 @@
       "costPrice": "Bevételezési ár",
       "price": "Eladási ár",
       "quantity": "Mennyiség",
-      "unitOfMeasurement": "Mértékegység",
+      "unitOfMeasurement": "Mértékegység (kiszerelés)",
       "manufacturer": "Gyártó",
       "barcode": "Vonalkód",
       "productCategory": "Termék kategória",

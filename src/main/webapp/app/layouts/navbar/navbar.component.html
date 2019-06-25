@@ -1,8 +1,8 @@
 <nav class="navbar navbar-dark navbar-expand-md bg-dark">
-    <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
-<!--        <span class="logo-img"></span>-->
+    <!--<a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
+        <span class="logo-img"></span>
         <span jhiTranslate="global.title" class="navbar-title">StorageManagementSpring</span> <span class="navbar-version">{{version}}</span>
-    </a>
+    </a>-->
     <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
         <fa-icon icon="bars"></fa-icon>
     </a>
@@ -16,8 +16,20 @@
                     </span>
                 </a>
             </li>
+            <li *ngSwitchCase="true" class="nav-item">
+                <a class="nav-link" routerLink="product" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                    <span jhiTranslate="global.menu.entities.product">Product</span>
+                </a>
+            </li>
+            <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_STOREKEEPER']">
+                <a class="nav-link" routerLink="order-entity" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                    <span jhiTranslate="global.menu.entities.orderEntity">Order Entity</span>
+                </a>
+            </li>
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
-            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_STOREKEEPER']" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                     <span>
                         <fa-icon icon="th-list"></fa-icon>
@@ -27,12 +39,12 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
-                    <li>
+                    <!--<li>
                         <a class="dropdown-item" routerLink="product" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.product">Product</span>
                         </a>
-                    </li>
+                    </li>-->
                     <li>
                         <a class="dropdown-item" routerLink="product-category" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
@@ -51,12 +63,12 @@
                             <span jhiTranslate="global.menu.entities.status">Status</span>
                         </a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a class="dropdown-item" routerLink="order-entity" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.orderEntity">Order Entity</span>
                         </a>
-                    </li>
+                    </li>-->
                     <!--<li>
                         <a class="dropdown-item" routerLink="order-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>

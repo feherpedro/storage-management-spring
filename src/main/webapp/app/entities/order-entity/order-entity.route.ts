@@ -38,7 +38,7 @@ export const orderEntityRoute: Routes = [
       pagingParams: JhiResolvePagingParams
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: ['ROLE_ADMIN', 'ROLE_STOREKEEPER'],
       defaultSort: 'id,asc',
       pageTitle: 'storageManagementSpringApp.orderEntity.home.title'
     },
@@ -51,7 +51,7 @@ export const orderEntityRoute: Routes = [
       orderEntity: OrderEntityResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: ['ROLE_ADMIN', 'ROLE_STOREKEEPER'],
       pageTitle: 'storageManagementSpringApp.orderEntity.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -63,7 +63,7 @@ export const orderEntityRoute: Routes = [
       orderEntity: OrderEntityResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: ['ROLE_ADMIN', 'ROLE_STOREKEEPER'],
       pageTitle: 'storageManagementSpringApp.orderEntity.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -75,7 +75,7 @@ export const orderEntityRoute: Routes = [
       orderEntity: OrderEntityResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: ['ROLE_ADMIN', 'ROLE_STOREKEEPER'],
       pageTitle: 'storageManagementSpringApp.orderEntity.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -90,7 +90,7 @@ export const orderEntityPopupRoute: Routes = [
       orderEntity: OrderEntityResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: ['ROLE_ADMIN', 'ROLE_STOREKEEPER'],
       pageTitle: 'storageManagementSpringApp.orderEntity.home.title'
     },
     canActivate: [UserRouteAccessService],
@@ -106,7 +106,7 @@ export const orderItemRoute: Routes = [
       orderItem: OrderItemResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: ['ROLE_ADMIN', 'ROLE_STOREKEEPER'],
       pageTitle: 'storageManagementSpringApp.orderItem.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -118,7 +118,7 @@ export const orderItemRoute: Routes = [
       orderItem: OrderItemResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: ['ROLE_ADMIN', 'ROLE_STOREKEEPER'],
       pageTitle: 'storageManagementSpringApp.orderItem.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -133,7 +133,7 @@ export const orderItemPopupRoute: Routes = [
       orderItem: OrderItemResolve
     },
     data: {
-      authorities: ['ROLE_USER'],
+      authorities: ['ROLE_ADMIN', 'ROLE_STOREKEEPER'],
       pageTitle: 'storageManagementSpringApp.orderItem.home.title'
     },
     canActivate: [UserRouteAccessService],

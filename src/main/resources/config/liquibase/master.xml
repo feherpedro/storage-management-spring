@@ -25,6 +25,7 @@
     <include file="config/liquibase/changelog/20190613163606_product_manufacturer.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190613170606_product_costprice.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190613192206_status_constants.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190625015630_add_storekeeper_role.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20190612031439_added_entity_constraints_Product.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190612031443_added_entity_constraints_OrderEntity.xml" relativeToChangelogFile="false"/>
