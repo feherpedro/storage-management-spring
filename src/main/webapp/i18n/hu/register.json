@@ -7,16 +7,16 @@
     "messages": {
       "validate": {
         "login": {
-          "required": "A felhasználói azonosító kötelezően kitöltendő.",
-          "minlength": "A felhasználói azonosító legalább 1 betűböl kell, hogy álljon",
-          "maxlength": "A felhasználói azonosító nem lehet több, mint 50 betü",
-          "pattern": "A felhasználói azonosító csak kisbetükből és számokból állhat."
+          "required": "A felhasználónév kötelezően kitöltendő.",
+          "minlength": "A felhasználónév legalább 1 betűböl kell, hogy álljon",
+          "maxlength": "A felhasználónév nem lehet több, mint 50 betü",
+          "pattern": "A felhasználónév csak kisbetükből és számokból állhat."
         }
       },
       "success": "<strong>A regisztráció sikerült!</strong>",
       "error": {
         "fail": "<strong>A regisztráció nem sikerült!</strong> Kérem próbálj újra később.",
-        "userexists": "<strong>A felhasználói azonosítót már más regisztrálta!</strong> Kérem válasszon másikat.",
+        "userexists": "<strong>A felhasználónevet már más regisztrálta!</strong> Kérem válasszon másikat.",
         "emailexists": "<strong>Az email cím már használatban van!</strong> Kérem adjon meg másikat."
       }
     }

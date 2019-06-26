@@ -22,7 +22,7 @@
         "settings": "Beállítások",
         "password": "Jelszó",
         "sessions": "Munkamenetek",
-        "login": "Hitelesítés",
+        "login": "Bejelentkezés",
         "logout": "Kilépés",
         "register": "Regisztráció"
       },
@@ -42,14 +42,17 @@
       "language": "Nyelvek"
     },
     "form": {
-      "username.label": "Azonosító",
-      "username.placeholder": "Az Ön felhasználói neve",
+      "username.label": "Felhasználónév",
+      "username.placeholder": "Felhasználónév",
       "currentpassword.label": "Jelenlegi jelszó",
       "currentpassword.placeholder": "Jelenlegi jelszó",
       "newpassword.label": "Új jelszó",
       "newpassword.placeholder": "Új jelszava",
+      "password.label": "Jelszó",
+      "password.placeholder": "Jelszó",
+      "confirmnewpassword.label": "Jelszó megerősítése",
       "confirmpassword.label": "Új jelszó megerősítése",
-      "confirmpassword.placeholder": "Írja be újra a jelszavát",
+      "confirmpassword.placeholder": "Jelszó megerősítése",
       "email.label": "Email",
       "email.placeholder": "Az Ön email címe"
     },
@@ -57,12 +60,12 @@
       "info": {
         "authenticated": {
           "prefix": "Ha be akar ",
-          "link": "lépni",
+          "link": "Itt tud belépni. ",
           "suffix": ", kipróbálás céljából használható felhasználók:<br/>- Adminisztrátor (azonosító=\"admin\" és a jelszó=\"admin\") <br/>- Felhasználó (azonosító=\"user\" és jelszó=\"user\")."
         },
         "register": {
           "noaccount": "Nincs még hozzáférése?",
-          "link": "Regisztráljon"
+          "link": "Itt tud regisztrálni."
         }
       },
       "error": {

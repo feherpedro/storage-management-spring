@@ -33,5 +33,6 @@
     <include file="config/liquibase/changelog/20190612031445_added_entity_constraints_StockTaking.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190612031446_added_entity_constraints_StockTakingItem.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190612071106_unique_barcode.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190626075135_drop_email_unique_constraint.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
